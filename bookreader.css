@@ -1,0 +1,257 @@
+  *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+
+        }
+        body{
+            background-color: #f5f5dc;
+        }
+        header{
+            isolation: isolate;
+            padding: 2dvh;
+            background-color: #6495ed;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+        }
+        @property --angle{
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+        nav{
+            position: relative;
+            border: none;
+            border-radius: 4rem;
+            padding: 1vh 1.5vh;
+            background-color: #6e9fee;
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            font-size: 1.3em;
+        }
+        nav a{
+            text-decoration: none;
+            color:#000;
+        }
+        nav a:hover{
+            transform: scale(1.1);
+            border-bottom: 5px solid rgb(239, 12, 80);
+            border-radius:2px;
+        }
+        nav::after,nav::before{
+            content: '';
+            position: absolute;
+            padding: .4rem 0.3rem;
+            border-radius: 4rem;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            inset: 50% auto auto  50%;
+            transform:translate(-50%,-50%);
+            background:conic-gradient(from var(--angle),transparent,blue);
+            animation: 3s spin linear infinite;
+      }  
+        nav::before{
+            filter: blur(5rem);
+            opacity: 0.5;
+        }
+        @keyframes spin{
+            from{
+                --angle:0deg;
+            }
+            to{
+                --angle:350deg;
+            }
+            
+        }
+        .search{
+            position: relative;
+            display: flex;
+            justify-content: space-evenly;
+            width: 80vh;
+            gap: 1vh;
+            padding:0.5em 1em;
+            background-color:rgb(239, 243, 246);
+            border-radius: 4rem;
+        }
+        .search input{
+            font-size: 1.2em;
+            border: none;
+        }
+          .search::after,.search::before{
+            content: '';
+            position: absolute;
+            padding: .4rem 0.3rem;
+            border-radius: 4rem;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            inset: 50% auto auto  50%;
+            transform:translate(-50%,-50%);
+            background:conic-gradient(from var(--angle),transparent,blue,rgb(235, 10, 104),rgb(22, 227, 224),rgb(214, 12, 167));
+            animation: 3s spin linear infinite;
+      }  
+        .search::before{
+            filter: blur(5rem);
+            opacity: 0.5;
+        }
+        .search button{
+            font-weight: 700;
+            border-radius: 2em;
+            width: 80px;
+            background: #3fd63f;
+            padding: .3em;
+        }
+        .banner{
+            isolation: isolate;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6vh;
+            padding: 10vh;
+            background: url("https://media.sketchfab.com/models/521be8364aff4469a3eb0ba24187587b/thumbnails/25cfdafdca084daf92cce8c8ca06a15b/c0453b14019343528c2d10c10bca5ef2.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .banner h1{
+            font-size: 3em;
+        }
+        .banner p{
+            margin-top: 1vh;
+            color:rgb(11, 11, 11);
+            font-size: 1.3em;
+            font-weight: 800;
+        }
+        .spline{
+            height: 50vh;
+            width: 100vw;
+        }
+        .display{
+            isolation: isolate;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 2em;
+            gap: 2em;
+            background-color: lightcyan;
+        }
+      
+        #trend{
+            perspective: 300px;
+            transform-style: preserve-3d;
+             padding: .3em;text-align: center;font-size: 3em;
+           transition:2s ease;
+            }
+            #trend:hover{
+               transform: rotateY(1turn);  
+            }
+            .card{
+                position: relative;
+                background-color: white;
+                border-radius: 4rem;
+                padding: 2em;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                align-items: center;
+                justify-content: center;
+            }
+            .card button{
+                font-size: 1.2em;
+                background-color:rgb(10, 124, 246);
+                color: white;
+                font-weight: 800;
+                border-radius: 3rem;
+                padding: .5em;
+            }
+              .card::after,.card::before{
+            content: '';
+            position: absolute;
+            padding: .4rem 0.3rem;
+            border-radius: 4rem;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            inset: 50% auto auto  50%;
+            transform:translate(-50%,-50%);
+            background:conic-gradient(from var(--angle),transparent,rgb(9, 163, 17));
+            animation: 3s spin linear infinite;
+      }  
+      .card::before{
+            filter: blur(5rem);
+            opacity: 0.5;
+        }
+
+            footer{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: white;
+    }
+    
+   
+        
+    .link{
+        font-size: 1.4em;
+    }
+    .link img{
+        
+        justify-content: center;
+        height: 3vh;
+        width: 3vh;
+        margin: 0.2em;
+       
+
+    }
+   
+    .pgs{
+        cursor: pointer;
+        color:#474d6a;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        font-size: 1.3em;
+    }
+    .play{
+        display: flex;
+        flex-direction: column;
+        margin: 2vh;
+        margin-top: 3vh;
+    }
+    .play img{
+        cursor: pointer;
+        margin-top: 2em;
+    }
+
+
+    /* search */
+
+
+    .soutput{
+         position: relative;
+             background-color: white;
+                border-radius: 4rem;
+                padding: 2em;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                align-items: center;
+                justify-content: center;
+    }
+    .soutput button{
+             font-size: 1.2em;
+                background-color:rgb(10, 124, 246);
+                color: white;
+                font-weight: 800;
+                border-radius: 3rem;
+                padding: .5em;
+    }
+    .newpdf{
+        height: 80vh;
+        width: 70vh;
+    }

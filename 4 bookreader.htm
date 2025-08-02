@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Reader</title>
+    <link rel="stylesheet" href="css/bookreader.css">
+</head>
+<body>
+    <header>
+        <h1>📜BookReader📜</h1>
+     
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Library</a>
+            <a href="#">Login</a>
+        </nav>
+    </header>
+    <div class="banner">
+        <div><h1>Explore The World of Book....</h1>
+        <p>10lakb+ Books For Free to Read!!!</p></div>
+        
+           <div class="search">
+            <img src="//static.naukimg.com/s/7/103/i/search.57b43584.svg" alt="">
+            <input type="text" placeholder="Book name:" id="search" list="usearch">
+              <datalist id="usearch">
+                <option value="deep">
+                <option value="think">
+                <option value="detox">
+                <option value="rich">
+            </datalist>
+            <input type="text" placeholder="Select Book type:" list="catogory">
+            <datalist id="catogory">
+                <option value="Education">
+                <option value="Story">
+                <option value="Frictional">
+                <option value="Scintific">
+                <option value="Ncert">
+            </datalist>
+            <button type="button" onclick="search();">Search</button>
+           
+          
+        </div>  <div class="soutput"></div> 
+        <iframe src="" frameborder="0" class="pdf"></iframe>
+    </div>
+    
+    <h1 id="trend">Trending Books<p style="font-size: .5em;">Liked by More Than 10Lakh+ Reader's</p> </h1>
+    <div class="display">
+       
+       <div class="card deep">
+        <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/images200/686/9780349413686.jpg" alt="">
+        <h2>Deep work</h2>
+        <h3>⭐️⭐️⭐️⭐️⭐</h3>
+        <p>44Lakh+ Review</p>
+        <button class="pdfbtn" onclick="pdf();">View Details</button>
+       </div>
+       <div class="card rich">
+        <img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/images200/219/9788186775219.jpg" alt="">
+             <h2>Rich Dad Poor Dad</h2>
+        <h3>⭐️⭐️⭐️⭐️</h3>
+        <p>80Lakh+ Review</p>
+        <button class="pdfbtn" onclick="pdf();">View Details</button>
+       </div>
+       <div class="card think"><img src="https://www.bookswagon.com/productimages/images200/648/9788172345648.jpg" alt="">
+         <h2>Think&Grow</h2>
+        <h3>⭐️⭐️⭐️⭐️⭐</h3>
+        <p>4Cr+ Review</p>
+    <button class="pdfbtn" onclick="pdf();">View Details</button></div>
+       <div class="card detox"><img src="https://d2g9wbak88g7ch.cloudfront.net/productimages/images200/015/9788183286015.jpg" alt="">
+         <h2>Dopamin Detox</h2>
+        <h3>⭐️⭐️⭐️</h3>
+        <p>84k+ Review</p>
+        <button class="pdfbtn" onclick="pdf();">View Details</button>
+    </div>
+
+    </div>
+
+     <footer>
+        <div>
+       <div >
+        <h1 style="background-color: greenyellow;">📜Book Reader📜</h1></div>
+        <div class="link">
+            <h4>Connect with us:</h4>
+            <img src="image/facebook.jpg" alt="">
+            <img src="image/insta.jpg" alt="">
+            <img src="image/youtube.jpg" alt="">
+            <img src="image/mail.jpg" alt="">
+        </div></div>
+
+
+
+        <div class="pgs">
+            <P>About us</P>
+            <p>carrier</p>
+            <p>Employee home</p>
+            <p>Sitemap</p>
+            <p>Credits</p>
+        </div>
+        <div class="pgs">
+            <p>Help center</p>
+            <p>Notices</p>
+            <p>Reaport issues</p>
+            <p>Grievances</p>
+        </div>
+        <div class="pgs">
+            <p>Privacy policy</p>
+            <p>Terms & Conditions</p>
+            <p>Fraud alert</p>
+            <p>Trust & Safty</p>
+        </div>
+        <div class="play">
+            <h3>Apply to the go</h3>
+            <p>Get real-time job updates on or App</p>
+           <p><img src="https://static.naukimg.com/s/0/0/i/new-homepage/android-app_v1.png" alt="">
+            <img src="https://static.naukimg.com/s/0/0/i/new-homepage/ios-app_v1.png" alt=""></p>
+        </div>
+    </footer>
+<script>
+         let svalue=document.querySelector('#search').value;
+       
+    function search(){ svalue=document.querySelector('#search').value;
+        
+        var name=['deep','rich','think','detox'];
+  
+        for(i in name){
+            
+            if(svalue==name[i]){
+                let output=document.querySelector('.'+svalue).innerHTML;
+                document.querySelector('.soutput').innerHTML=output;
+            }
+        }
+     
+       
+    }
+    
+    
+       let pdfdata={"deep":"https://cdn.bookey.app/files/pdf/book/en/deep-work.pdf","think":"https://lit2talks.com/read_book.php?bookpath=2333","rich":"https://cdn.bookey.app/files/pdf/book/en/rich-dad-poor-dad.pdf","detox":"https://cdn.bookey.app/files/pdf/book/en/dopamine-detox.pdf"}
+   let pdfvalue= document.querySelector(".pdf");
+    function pdf(){
+            for(i in pdfdata){
+              if(svalue==i){
+            pdfvalue.src=pdfdata[i];
+            
+            document.querySelector('.pdfbtn').innerHTML='Close Pdf';
+        
+        document.querySelector('.pdf').classList.add('newpdf');
+      
+        }
+            }
+        }
+</script>
+</body>
+</html> 
